@@ -1,128 +1,142 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>授業難易度チェッカー｜楽単を見分けるツール</title>
-    <meta name="description" content="楽単? 鬼単? 大学の授業難易度を1分で判定できます!">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="google-site-verification" content="kRHtoA1XSr1OkaK8ReYxleALAN_1LNsMDbYvSaf18gc" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>授業難易度チェッカー</title>
+    <meta
+      name="description"
+      content="楽単? 鬼単? 大学の授業難易度を1分で判定できます!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reggae+One&family=RocknRoll+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-        <div class="header">
-            <h1>授業難易度チェッカー</h1>
+      <div class="header">
+        <h1>授業難易度チェッカー</h1>
+      </div>
+
+      <div class="test-containers">
+        <div class="introduction">
+          <div class="description">
+            <ul>
+              <li>大学の授業難易度を 易～難 の5段階で診断するツールです。</li>
+              <li>授業は講義系の科目を想定しています。</li>
+              <li>診断結果に関しては参考程度で捉えてください。</li>
+            </ul>
+          </div>
+          <button id="introBtn">診断を開始する</button>
         </div>
 
-        
-        <div class="test-containers">
-
-            <div class="introduction">
-                <div class="description">
-                    <p>
-                        <ul>
-                            <li>
-                                大学の授業難易度を 易～難 の5段階で診断するツールです。
-                            </li>
-                            <li>
-                                授業は講義系の科目を想定しています。
-                            </li>
-                            <li>
-                                診断結果に関しては参考程度で捉えてください。
-                            </li>
-                        </ul>
-                    </p>
-                </div>
-                <button id="introBtn">診断を開始する</button>
+        <div class="test-container 1">
+          <div class="test">
+            <p class="question-count">
+              <span class="Q">Q</span><br /><span class="count">1/6</span>
+            </p>
+            <p class="question">授業の形式は?</p>
+            <div class="choices">
+              <button class="answerBtn class-style" value="face-to-face">
+                対面
+              </button>
+              <button class="answerBtn class-style" value="online">
+                オンライン
+              </button>
             </div>
-
-            <div class="test-container 1">
-                <div class="test">
-                    <p class="question-count"><span class="Q">Q</span><br><span class="count">1/6</span></p>
-                    <p class="question">授業の形式は?</p>
-                    <div class="choices">
-                        <button class="answerBtn class-style" value="face-to-face">対面</button>
-                        <button class="answerBtn class-style" value="online">オンライン</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="test-container 2">
-                <div class="test">
-                    <p class="question-count"><span class="Q">Q</span><br><span class="count">2/6</span></p>
-                    <p class="question">出席は?</p>
-                    <div class="choices">
-                        <button class="answerBtn attendance" value="T">とる</button>
-                        <button class="answerBtn attendance">とらない</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="test-container 3">
-                <div class="test">
-                    <p class="question-count"><span class="Q">Q</span><br><span class="count">3/6</span></p>
-                    <p class="question">資料はオンラインで共有される?</p>
-                    <div class="choices">
-                        <button class="answerBtn document" value="T">される</button>
-                        <button class="answerBtn document">されない</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="test-container 4">
-                <div class="test">
-                    <p class="question-count"><span class="Q">Q</span><br><span class="count">4/6</span></p>
-                    <p class="question">中間・期末テストは?</p>
-                    <div class="choices">
-                        <button class="answerBtn exam" value="T">ある</button>
-                        <button class="answerBtn exam">ない</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="test-container 5">
-                <div class="test">
-                    <p class="question-count"><span class="Q">Q</span><br><span class="count">5/6</span></p>
-                    <p class="question">中間・期末レポートは?</p>
-                    <div class="choices">
-                        <button class="answerBtn report" value="T">ある</button>
-                        <button class="answerBtn report">ない</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="test-container 6">
-                <div class="test">
-                    <p class="question-count"><span class="Q">Q</span><br><span class="count">6/6</span></p>
-                    <p class="question">平常点(リアクションペーパー,小テスト等)<br>での評価は?</p>
-                    <div class="choices">
-                        <button class="answerBtn participation" value="T">ある</button>
-                        <button class="answerBtn participation">ない</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="test-result">
-                <div class="loader">
-                    <p class="loading">
-                        <span class="char">診</span><span class="char">断</span><span class="char">中</span><span class="char">.</span><span class="char">.</span><span class="char">.</span>
-                    </p>
-                </div>
-                <div class="result">
-                    <p>この授業の難易度は…</p>
-                    <p class="show-result"><span class="type"></span> です</p>
-                    <button class="retest">診断を受けなおす</button>
-                    <p class="notes">※結果は参考程度で捉えてください</p>
-                </div>
-            </div>
+          </div>
         </div>
 
+        <div class="test-container 2">
+          <div class="test">
+            <p class="question-count">
+              <span class="Q">Q</span><br /><span class="count">2/6</span>
+            </p>
+            <p class="question">出席は?</p>
+            <div class="choices">
+              <button class="answerBtn attendance" value="T">とる</button>
+              <button class="answerBtn attendance">とらない</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-container 3">
+          <div class="test">
+            <p class="question-count">
+              <span class="Q">Q</span><br /><span class="count">3/6</span>
+            </p>
+            <p class="question">資料はオンラインで共有される?</p>
+            <div class="choices">
+              <button class="answerBtn document" value="T">される</button>
+              <button class="answerBtn document">されない</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-container 4">
+          <div class="test">
+            <p class="question-count">
+              <span class="Q">Q</span><br /><span class="count">4/6</span>
+            </p>
+            <p class="question">中間・期末テストは?</p>
+            <div class="choices">
+              <button class="answerBtn exam" value="T">ある</button>
+              <button class="answerBtn exam">ない</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-container 5">
+          <div class="test">
+            <p class="question-count">
+              <span class="Q">Q</span><br /><span class="count">5/6</span>
+            </p>
+            <p class="question">中間・期末レポートは?</p>
+            <div class="choices">
+              <button class="answerBtn report" value="T">ある</button>
+              <button class="answerBtn report">ない</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-container 6">
+          <div class="test">
+            <p class="question-count">
+              <span class="Q">Q</span><br /><span class="count">6/6</span>
+            </p>
+            <p class="question">
+              平常点(リアクションペーパー,小テスト等)<br />での評価は?
+            </p>
+            <div class="choices">
+              <button class="answerBtn participation" value="T">ある</button>
+              <button class="answerBtn participation">ない</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-result">
+          <div class="loader">
+            <p class="loading">
+              <span class="char">診</span><span class="char">断</span
+              ><span class="char">中</span><span class="char">.</span
+              ><span class="char">.</span><span class="char">.</span>
+            </p>
+          </div>
+          <div class="result">
+            <p>この授業の難易度は…</p>
+            <p class="show-result"><span class="type"></span> です</p>
+            <button class="retest">診断を受けなおす</button>
+            <p class="notes">※結果は参考程度で捉えてください</p>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
